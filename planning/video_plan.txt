@@ -1,0 +1,27 @@
+
+10 to 15 min (MAX) video explaining your project with the following criteria and timestamps of each:
+
+
+Henry:
+1. Mention the software technologies that you have used for the creation of your project.
+2. Show briefly the relational database schema you have implemented and comment on any
+differences of this schema and the one you have submitted as part of Deliverable 1.
+3. Comment briefly on the major integrity constraints that you have implemented. Justify their
+choices and show the respective SQL code.
+
+Akash:
+4. Show and describe briefly the data with which you have populated your database. For
+example, mention how you created the data and what is the size in number of rows per major
+relation.
+5. Show the execution of some SQL queries on your database.
+6. Show the execution of some modifications on your database which fire a trigger. Show the
+SQL code of the trigger and explain how it implements a specific user-defined constraint.
+
+Gio:
+7. Show the SQL code and comment on the indexes you have implemented on your database.
+8. Show the SQL code and comment on the views you have implemented on your database.
+9. Show the User Interface you have implemented. Show briefly some of the functionalities of
+the interface: e.g. you can show the insertion/deletion/update of data, you can show the
+customer and the employee view and explain how they differ. Furthermore, show how a new
+booking or renting is made, and show how a booking is transformed to a renting when the
+customer checks in
