@@ -1,0 +1,26 @@
+Integrity constraints (summary)
+
+Primary keys: on every table as listed in the relational schema (composite PKs where noted).
+
+Foreign keys:
+- hotel.chain_name → hotel_chain.chain_name (RESTRICT on delete of chain while hotels exist)
+- room.(hotel_id, room_number) → hotel / room composite
+- booking and renting reference customer, employee, room as in schema
+- Multivalued: chain_email, chain_phone, hotel_phone, employee_role use FKs with CASCADE on parent delete where safe
+
+Domain / attribute:
+- hotel.hotel_rating ∈ [1,5]
+- room.view_type ∈ {sea, mountain, city, garden}
+- room.room_capacity ∈ {single, double, suite, family, twin}
+- room.price > 0; customer_payment.amount > 0
+- booking.end_date > start_date; booking.status ∈ {active, converted, cancelled}
+- renting.end_date >= start_date
+- booking.start_date >= booking_date (no back-dated stays vs booking row date)
+
+User-defined (examples):
+- Last manager per hotel cannot be deleted (trigger)
+- Inserting a renting with a booking_id sets that booking to status = converted (trigger)
+
+Deletes (application): removing a customer, room, hotel, or chain copies affected bookings/rentings into booking_archive / renting_archive first, then deletes live rows so FK rules and “history survives without room/customer” both hold. Payments are not archived (spec: no payment history).
+
+Indexes (see sql/03_indexes.sql): hotel(area, chain_name); booking/renting room+date columns for overlap checks.

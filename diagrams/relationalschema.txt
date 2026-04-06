@@ -1,0 +1,25 @@
+Relational schema (from ER diagram / implementation)
+
+Sample data (06_seed.sql): five hotel chains, eight hotels per chain, hotels spread across 18 North American city/region values (more than the “14+ locations” requirement).
+
+hotel_chain(chain_name PK, address_central_offices, number_hotels)
+chain_email(chain_name FK→hotel_chain, contact_email) PK(chain_name, contact_email)
+chain_phone(chain_name FK→hotel_chain, phone_numbers) PK(chain_name, phone_numbers)
+
+hotel(hotel_id PK, chain_name FK→hotel_chain, hotel_rating, number_rooms, street_number, street_name, area, contact_email)
+hotel_phone(hotel_id FK→hotel, phone_numbers) PK(hotel_id, phone_numbers)
+
+room(hotel_id FK→hotel, room_number PK, price, TV, air_condition, fridge, room_capacity, view_type, extendable, has_problems)
+
+customer(customer_ID PK, first_name, last_name, street_address, city, ID_type, ID_number, registration_date)
+
+employee(employee_ID PK, hotel_ID FK→hotel, first_name, last_name, address, ssn_sin, is_manager)
+employee_role(employee_ID FK→employee, role_name) PK(employee_ID, role_name)
+
+booking(booking_id PK, customer_id FK→customer, hotel_id, room_number FK→room, booking_date, start_date, end_date, status)
+
+renting(renting_id PK, booking_id FK→booking NULL, customer_id FK→customer, employee_id FK→employee, hotel_id, room_number FK→room, start_date, end_date)
+
+customer_payment(payment_id PK, renting_id FK→renting, amount, paid_at)
+
+booking_archive, renting_archive — snapshot rows for history when master data is removed

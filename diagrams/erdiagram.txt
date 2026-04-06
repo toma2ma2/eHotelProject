@@ -1,0 +1,45 @@
+## ER Diagram Description — Hotel Management System
+
+### Entities & Attributes
+
+**Customers**
+- `customer_ID` (PK), `full_name` (composed of `first_name`, `last_name`), `ID_type`, `ID_number`, `registration_date`
+
+**Hotel**
+- `hotel_id` (PK), `chain_name` (FK), `hotel_rating`, `number_rooms`, `address_hotel` (composed of `street_number`, `street_name`), `contact_email`, `{phone_numbers}` (multivalued)
+
+**Hotel Chain**
+- `chain_name` (PK), `address_central_offices`, `number_hotels`, `{contact_email_addresses}` (multivalued), `{phone_numbers}` (multivalued)
+
+**Room**
+- `hotel_id` (FK), `room_number` (PK), `price`, `amenities` (composed of `TV`, `air_condition`, `fridge`), `room_capacity`, `view_type`, `extendable`, `has_problems`
+
+**Booking**
+- `booking_id` (PK), `customer_id`, `hotel_id`, `room_number`, `booking_date`, `start_date`, `end_date`
+
+**Renting**
+- `renting_id` (PK), `booking_id`, `customer_id`, `employee_id`, `hotel_id`, `room_number`, `start_date`, `end_date`
+
+**Employees**
+- `employee_ID` (PK), `hotel_ID` (FK), `full_name` (composed of `first_name`, `last_name`), `address`, `ssn_sin`, `{roles}` (multivalued)
+
+**Archive**
+- `hotel_ID`, `chain_name`, `street_name`, `room_number`, `customer_full_name` (`first_name`, `last_name`), `renting_booking_info` (`booking_date`, `renting_period`)
+
+---
+
+### Relationships
+
+| Relationship | Entities Involved | Description |
+|---|---|---|
+| **Books** | Customers → Room | A customer books a room |
+| **Reserves** | Customers → Booking | A customer creates a booking |
+| **Check/Walk-in** | Customers (self-loop) | A customer can check in directly |
+| **Creates** | Customers → Booking | Customer creates a booking record |
+| **Rented In** | Renting → Room | A renting is associated with a room |
+| **Creates** | Employees → Renting | An employee creates a renting record |
+| **Preserves** | Renting/Booking → Archive | Records are preserved in the archive |
+| **Belongs** | Room → Hotel | A room belongs to a hotel |
+| **Belongs** | Hotel → Hotel Chain | A hotel belongs to a hotel chain |
+| **Works in** | Employees → Hotel | An employee works in a hotel |
+| **Manages** | Employees (manager → employees) | A manager manages other employees |

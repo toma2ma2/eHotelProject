@@ -1,0 +1,19 @@
+body { font-family: Georgia, serif; max-width: 900px; margin: 1rem auto; padding: 0 1rem; line-height: 1.4; }
+nav a { margin-right: 1rem; }
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0; }
+th, td { border: 1px solid #999; padding: 0.35rem 0.5rem; text-align: left; }
+th { background: #eee; }
+form p { margin: 0.4rem 0; }
+label { display: inline-block; min-width: 10rem; }
+input, select, button { font: inherit; }
+.err { color: #a00; }
+.ok { color: #060; }
+.hint { font-size: 0.95rem; color: #444; margin-bottom: 0.75rem; }
+fieldset { border: 1px solid #ccc; padding: 0.75rem 1rem; margin: 0.75rem 0; }
+legend { padding: 0 0.35rem; }
+.radio-row { margin: 0.5rem 0; }
+.radio-label { display: block; cursor: pointer; }
+.radio-label input { margin-right: 0.5rem; }
+.role-form fieldset { max-width: 32rem; }
+.nav-switch { margin-left: 1rem; font-size: 0.9rem; }
+code { font-size: 0.9em; }
