@@ -1,0 +1,17 @@
+Database Indexes
+
+Three indexes were implemented on the database to speed up the most frequently expected queries
+
+Index 1: idx_hotel_area_chain on hotel(area, chain_name)
+This index was created to speed up room search queries. Specifically when filtering hotels by area and hotel chain.
+This would be the most common search in the web app becaus customers often search for available rooms in a
+specific area or chain. So indexing these two columns together lets PostgreSQL quickly narrow down the hotels without scanning everything.
+
+Index 2: idx_booking_room_dates on booking(hotel_id, room_number, start_date, end_date) where status = 'active'
+This is a partial index that only indexes the active bookings. This helps speed up the availability checks for a certain room in a given date range.
+Since cancelled and converted bookings don't matter for availability, the partial index keeps things small and fast by excluding those rows completely.
+
+Index 3: idx_renting_room_dates on renting(hotel_id, room_number, start_date, end_date)
+Similar to the booking index, this index speeds up the availability checks. Since the availability views and search queries need to check both
+bookings and rentings, this index makes sure both the lookups are equally fast.
+
