@@ -1,0 +1,10 @@
+For your first boot of this program, you must setup the database so that it fills with the default values and host the local web server.
+
+Before running any commands you must have:
+PostgresSQL installed with the path added to environment variables
+php installed with the path added to environment variables
+Git Bash installed to run commands (required to run the .sh file)
+
+1. Open Git Bash and navigate to the folder that holds the entire project
+    a. Git Bash by default is in your 
+2. 
