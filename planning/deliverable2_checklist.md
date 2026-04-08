@@ -8,12 +8,12 @@
 
 ## 2. SQL Code
 
-- [ ] Database population (5 hotel chains, 8+ hotels each, 3+ categories, 5+ rooms per hotel)
-- [ ] At least 4 queries (1 with aggregation, 1 with nested query)
-- [ ] At least 2 triggers
-- [ ] At least 3 indexes with written justification for each
-- [ ] View 1: number of available rooms per area
-- [ ] View 2: aggregated capacity of all rooms of a specific hotel
+- [x] Database population (5 hotel chains, 8+ hotels each, 3+ categories, 5+ rooms per hotel)
+- [x] At least 4 queries (1 with aggregation, 1 with nested query)
+- [x] At least 2 triggers
+- [x] At least 3 indexes with written justification for each
+- [x] View 1: number of available rooms per area
+- [x] View 2: aggregated capacity of all rooms of a specific hotel
 
 ## 3. Application Code
 
