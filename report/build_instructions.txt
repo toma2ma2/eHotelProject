@@ -1,0 +1,119 @@
+For your first boot of this program, you must setup the database so that it fills with the default values and host the local web server.
+
+Before running any commands you must have:
+1. PostgreSQL installed. Make sure PostgreSQL's bin folder is on your PATH variables
+2. php installed with the path added to environment variables
+3. Git Bash installed to run commands (required to run the .sh file)
+4. The name of your postgres user (by default usually "postgres")
+5. The password to your postgres user (For security prompts)
+6. A working browser to open the local host website
+
+Note: The guide for Mac users follows the Windows one.
+
+Windows Guide:
+
+1. Open Git Bash and navigate to the folder that holds the entire project
+    a. Ex: C:\Users\akash\DOCS\CSI 2132 Deliverable 2\eHotelProject is my personal project folder path
+    b. Git Bash by default is in your user directory on your computer (In my case C:/Users/akash)
+
+
+2. Use the cd command to navigate into the project folder
+    a. You can go 1 by 1 into each folder until you reach the right folder
+    b. alternatively, you can convert your file path into forward slashes and use cd folder_path
+    c. Ex. cd DOCS/"CSI 2132 Deliverable 2"/eHotelProject for my computer
+    d. Surround any folder names that contain spaces in " " to navigate into them
+
+3. In Git Bash, once you've reached the project folder, run the following:
+    a. createdb -U postgres hotelproj
+    b. be sure to replace "postgres" with the name of your postgres user.
+    c. Based on your security permissions, PostgreSQL will prompt you to enter your password
+    d. Type the password and press enter (the password is hidden so it tracks your keystrokes)
+
+4. Now in the same folder run the following:
+    a. PGUSER=postgres ./sql/run_all.sh hotelproj
+    b. be sure to replace "postgres" with the name of your postgres user.
+    c. Based on your security permissions, PostgreSQL will prompt you to enter your password
+    d. Type the password and press enter (the password is hidden so it tracks your keystrokes)
+    e. You will be prompted to enter your password multiple times
+    f. If everything is working, it should display a bunch of lines showing the tables' creation and data instantiation
+
+5. At this point, the database has been created locally and is ready to run on the local host
+
+6. While on Git Bash in the project folder, run the following command to navigate into the web folder:
+    a. cd web
+
+7. Now that you've navigated to the web folder, run the following to host the website:
+    a. export HOTEL_DB_PASS=postgres
+    b. replace "postgres" with your postgres user password
+    c. php -S 127.0.0.1:8080
+
+8. If everything has run properly you should get a message like this:
+    a. [Tue Apr  7 20:34:16 2026] PHP 8.2.12 Development Server (http://127.0.0.1:8080) started
+
+9. Open your web browser and go to http://127.0.0.1:8080 or whatever local host you decided
+    a. You should now be able to run the website and act as an employee or customer
+
+
+10. In the case where you can't get it to work as expected, you can reset and reinitialize the database as such:
+    a. dropdb -U postgres hotelproj
+    b. createdb -U postgres hotelproj
+    c. PGUSER=postgres ./sql/run_all.sh hotelproj
+    d. replace "postgres" with your PostgreSQL user 
+
+
+Mac Guide:
+
+Note: Mac does not need Git Bash — you can use the built-in Terminal app instead. PHP may already be installed on your Mac, and PostgreSQL can be installed via Homebrew.
+Installing prerequisites (if needed):
+
+- Install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- Install PostgreSQL: brew install postgresql@17
+- Start PostgreSQL: brew services start postgresql@17
+- PHP is pre-installed on most Macs, verify with: php --version
+
+
+1. Open Terminal and navigate to the project folder
+    a. Ex: /Users/akash/Docs/CSI 2132 Deliverable 2/eHotelProject
+    b. Terminal by default opens in your home directory (/Users/yourname)
+
+2. Use the cd command to navigate into the project folder
+    a. You can go 1 by 1 into each folder until you reach the right folder
+    b. Alternatively use the full path: cd "/Users/yourname/path/to/eHotelProject"
+    c. Surround any folder names that contain spaces in " " to navigate into them
+
+
+3. In Terminal, once you've reached the project folder, run the following:
+    a. createdb -U postgres hotelproj
+    b. Be sure to replace "postgres" with the name of your postgres user
+    c. Based on your security permissions, PostgreSQL will prompt you to enter your password
+    d. Type the password and press enter (the password is hidden so it tracks your keystrokes)
+
+4. Now in the same folder run the following:
+    a. PGUSER=postgres ./sql/run_all.sh hotelproj
+    b. Be sure to replace "postgres" with the name of your postgres user
+    c. Based on your security permissions, PostgreSQL will prompt you to enter your password
+    d. Type the password and press enter (the password is hidden so it tracks your keystrokes)
+    e. You will be prompted to enter your password multiple times
+    f. If everything is working, it should display a bunch of lines showing the tables' creation and data instantiation
+
+5. At this point, the database has been created locally and is ready to run on the local host
+
+6. While in Terminal in the project folder, navigate into the web folder:
+    a. cd web
+
+7. Now that you've navigated to the web folder, run the following to host the website:
+    a. export HOTEL_DB_PASS=postgres
+    b. Replace "postgres" with your postgres user password
+    c. php -S 127.0.0.1:8080
+
+8. If everything has run properly you should get a message like this:
+    a. [Tue Apr 7 20:34:16 2026] PHP 8.2.12 Development Server (http://127.0.0.1:8080) started
+
+9. Open your web browser and go to http://127.0.0.1:8080
+    a. You should now be able to run the website and act as an employee or customer
+
+10. In the case where you can't get it to work as expected, you can reset and reinitialize the database:
+    a. dropdb -U postgres hotelproj
+    b. createdb -U postgres hotelproj
+    c. PGUSER=postgres ./sql/run_all.sh hotelproj
+    d. Replace "postgres" with your PostgreSQL user

@@ -1,0 +1,9 @@
+DBMS and Languages
+
+The DBMS used for this project was PostgreSQL. The database is local, 
+so the user will have to follow the build instructions provided to set up the local database themselves.
+
+For the web application, PHP was used for the server side, 
+with HTML embedded within the PHP files for the client side, and CSS for styling.
+
+For the database itself, SQL was used to implement the schema, queries, triggers, indexes, and views.

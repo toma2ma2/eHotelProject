@@ -2,8 +2,8 @@
 
 ## 1. Report
 
-- [ ] DBMS and programming languages used
-- [ ] Step-by-step installation instructions
+- [x] DBMS and programming languages used
+- [x] Step-by-step installation instructions
 - [x] All DDL SQL statements that create your database
 
 ## 2. SQL Code
