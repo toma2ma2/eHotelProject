@@ -23,10 +23,6 @@ ALTER TABLE hotel
     ADD CONSTRAINT chk_hotel_email
     CHECK (contact_email LIKE '%@%.%');
 
-ALTER TABLE employee
-    ADD CONSTRAINT chk_ssn_format
-    CHECK (ssn_sin LIKE 'SSN-%');
-
 ALTER TABLE booking
     ADD CONSTRAINT chk_no_overlapping_bookings
     EXCLUDE USING gist (
