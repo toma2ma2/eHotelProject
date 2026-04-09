@@ -22,13 +22,13 @@
 ## 4. Video (.mp4, max 30MB, ~10 min, max 15 min)
 
 ### Henry's Part
-- [ ] 1. Software technologies used
-- [ ] 2. Relational schema + any differences from Deliverable 1
-- [ ] 3. Major integrity constraints + SQL code
-- [ ] 4. Data population description (how created, row counts per major relation)
+- [x] 1. Software technologies used
+- [x] 2. Relational schema + any differences from Deliverable 1
+- [x] 3. Major integrity constraints + SQL code
+- [x] 4. Data population description (how created, row counts per major relation)
 ### Akash's part
-- [ ] 5. SQL query execution demos
-- [ ] 6. Trigger execution demo + SQL code explanation
+- [x] 5. SQL query execution demos
+- [x] 6. Trigger execution demo + SQL code explanation
 
 ### Gio's part
 - [ ] 7. Index SQL code + commentary
@@ -45,12 +45,12 @@
 
 | Requirement                        | Start Timestamp |
 | ---------------------------------- | --------------- |
-| 1. Software technologies           |                 |
-| 2. Relational schema + differences |                 |
-| 3. Integrity constraints           |                 |
-| 4. Data population                 |                 |
-| 5. SQL queries                     |                 |
-| 6. Trigger execution               |                 |
-| 7. Indexes                         |                 |
+| 1. Software technologies           | 0:00            |
+| 2. Relational schema + differences | 0:40            |
+| 3. Integrity constraints           | 1:57            |
+| 4. Data population                 | 2:15            |
+| 5. SQL queries                     | 3:45            |
+| 6. Trigger execution               | 5:03            |
+| 7. Indexes                         | 7:03            |
 | 8. Views                           |                 |
 | 9. User interface demo             |                 |
