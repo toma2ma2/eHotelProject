@@ -52,5 +52,5 @@
 | 5. SQL queries                     | 3:45            |
 | 6. Trigger execution               | 5:03            |
 | 7. Indexes                         | 7:03            |
-| 8. Views                           |                 |
-| 9. User interface demo             |                 |
+| 8. Views                           | 7:47            |
+| 9. User interface demo             | 8:14            |
